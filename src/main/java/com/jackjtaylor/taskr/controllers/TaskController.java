@@ -3,12 +3,14 @@ package com.jackjtaylor.taskr.controllers;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.jackjtaylor.taskr.model.TaskModel;
+
 @RestController
-public class UserController {
+public class TaskController {
 
     @GetMapping("/getTask")
-    public String getTask() {
-        return "Buy a Laptop";
+    public TaskModel getTask() {
+        return new TaskModel("Buy a MacBook", false);
     }
 
 }
