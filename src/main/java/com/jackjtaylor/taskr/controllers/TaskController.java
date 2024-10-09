@@ -8,6 +8,8 @@ import com.jackjtaylor.taskr.model.TaskModel;
 
 import java.util.HashMap;
 import java.util.Map;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 public class TaskController {
@@ -24,4 +26,8 @@ public class TaskController {
         return tasks.get(taskName);
     }
 
+    @PostMapping("/addTask")
+    public void postMethodName(@RequestBody TaskModel task) {
+        tasks.put(task.getTaskName(), task);
+    }
 }
